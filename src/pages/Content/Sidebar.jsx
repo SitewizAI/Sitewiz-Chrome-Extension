@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from '../../assets/img/logo.svg';
-import Greetings from '../../containers/Greetings/Greetings';
-import './Popup.css';
+import React, { useState } from 'react';
+import './Sidebar.css'; // Assuming you have some basic styles defined
 
-const Popup = () => {
+const Sidebar = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/pages/Popup/Popup.jsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React!
-        </a>
-      </header>
+    <div className={`sidebar ${isExpanded ? 'expanded' : 'collapsed'}`}>
+      <button onClick={toggleSidebar} className="toggle-button">
+        {isExpanded ? 'Collapse' : 'Expand'}
+      </button>
+      {isExpanded && (
+        <div className="content">
+          <p>
+            This is the expanded sidebar content with more detailed information
+            and suggestions.
+          </p>
+          {/* Add more content or components here as needed */}
+        </div>
+      )}
     </div>
   );
 };
 
-export default Popup;
+export default Sidebar;

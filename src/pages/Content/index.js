@@ -14,10 +14,8 @@ function createSidebarContainer() {
     position: 'fixed', // Fixed position to stay in place during scrolling
     top: '0', // Start from the top of the viewport
     right: '0', // Position on the right edge of the viewport
-    width: '250px', // Width of the sidebar
+    width: '400px', // Width of the sidebar
     height: '100vh', // Full height of the viewport
-    backgroundColor: '#fff', // Background color
-    boxShadow: '-3px 0 10px rgba(0, 0, 0, 0.2)', // Shadow for 3D effect
     zIndex: '999999', // High z-index to overlay on top of other content
     overflowY: 'auto', // Allow scrolling within the sidebar
   });
